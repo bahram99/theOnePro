@@ -25,6 +25,9 @@
       <link rel="stylesheet" href="css/responsive.css" />
       <!-- Custom CSS -->
       <link rel="stylesheet" href="css/custom.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -41,8 +44,10 @@
       <div class="wrapper">
       <nav id="sidebar">
          <div class="menu_section">
-            <ul>
+            <ul >
                <li><a href="#content">خانه</a></li>
+               <li><a href="#" onclick="onlogin()">ورود</a></li>
+               <li><a href="#" onclick="onsign()">ثبت نام</a></li>
                <li><a href="about.html">درباره ما</a></li>
                <li><a href="services.html">سرویس ها</a></li>
                <li><a href="contact.html">ارتباط با ما</a></li>
@@ -56,60 +61,42 @@
                <div class="row">
                   <div class="col-sm-6">
                      <div class="logo_main">
-                        <a href="index.html"><img src="images/main_logo.png" /></a>
+                        <a href="#"  class="navbar-brand"><img style="width: 5rem; height: 5rem;" src="images/WhatsApp Image 2020-07-27 at 11.08.59 AM.jpeg" /></a>
+                        
+                        <button id="login" style="margin-left: 2rem;"  class="btn btn-outline-primary" onclick="onlogin()">ورود</button>
+                        <button id="login" class="btn btn-outline-primary" onclick="onsign()">ثبت نام</button>
                      </div>
                   </div>
                   <div class="col-sm-6">
-                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img src="images/menu_icon.png"></button>
+                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img class="iimg" src="images/menu_icon.png"></button>
+                     <button id="use"  class="btn btn-primary use"  onclick="foo()">!سه روز استفاده رایگان</button>
                   </div>
                </div>
             </div>
          </header>
          <!-- End header -->
+         
          <!-- Start Banner -->
          <div class="ulockd-home-slider">
             <div class="container-fluid">
                <div class="row">
                   <div class="pogoSlider" id="js-main-slider">
-                     <div class="pogoSlider-slide" style="background-image:url(images/slider_1.jpg);">
-                        <div class="container">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <div class="slide_text">
-                                    <!-- <h6>Grow your business</h6>
-                                    <h3>Digital</h3>
-                                    <h4>Marketing</h4>
-                                    <br>
-                                    <a class="readmore_bt" href="about.html">سه روز استفاده رایگان</a>
-                                 </div> -->
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="pogoSlider-slide" style="background-image:url(images/slider_1.jpg);">
-                        <div class="container">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <div class="slide_text">
-                                    <h6>Grow your business</h6>
-                                    <h3>Digital</h3>
-                                    <h4>Marketing</h4>
-                                    <br>
-                                    <a class="readmore_bt" href="about.html">بیشتر بخوانید</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     </div>
-                  <!-- .pogoSlider -->
-               </div>
+                     <img class="pogoSlider-slide" src="./images/WhatsApp Image 2020-07-27 at 11.08.59 AM (2).jpeg">
+                       
+                   <div class="pogoSlider" id="js-main-slider">
+                     <img class="pogoSlider-slide" src="./images/WhatsApp Image 2020-07-27 at 11.08.59 AM (1).jpeg">     
+                     
+                  <div class="pogoSlider" id="js-main-slider">
+                     <img class="pogoSlider-slide" src="./images/slider_1.jpg">     
+                  </div>
+                  </div>
             </div>
          </div>
          <!-- End Banner -->
          <!-- section -->
          <div class="section about_section layout_padding dash_bg">
-            <div class="container">
+            <div class="container" data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom " data-aos-duration="3000" data-aos-offset="200">
                <div class="row">
                   <div class="col-md-12">
                      <div class="full">
@@ -211,7 +198,7 @@
          <!-- section -->
          <div class="section about_section layout_padding padding_top_0">
             <div class="container">
-               <div class="row">
+               <div class="row" data-aos="fade-right"  data-aos-duration="3000" data-aos-offset="200">
                   <div class="col-md-12">
                      <div class="full">
                         <div class="heading_main text_align_center">
@@ -220,16 +207,16 @@
                      </div>
                   </div>
                </div>
-               <div class="row">
+               <div class="row" data-aos="fade-down-left"  data-aos-duration="3000" data-aos-offset="200">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
                      <div class="full">
                         <div class="heading_small">
-                          <h4 style="direction: rtl;text-align: right;">پیچیدگی ها سازمان دهی شوند</h4>
+                          <h4 style="direction: rtl;text-align: right; line-height: 3rem;">پیچیدگی ها سازمان دهی شوند</h4>
                         </div>
                         <p style="direction: rtl;text-align: right;">من پروژه جدید گرفته ام. در این پروژه با چالش های زیادی رو به رو هستم. برای مدیریت این پروژه نیاز به کمک دارم.<br><br>the one سرویسی هست در خدمت شما برای مدیریت کردن بهتر پروژه های شماتا بتوانید با آسودگی خاطر بیشتری  پروژه های خود را مدیریت کنید و از پس چالش های پروژه با صرف کمترین هزینه زمانی برآیدد.</p>
                       </div>
                       <div class="full margin-top_30">
-                        <a class="readmore_bt" href="about.html">بیشتر بخوانید </a>
+                        <a class="readmore_bt" href="#">بیشتر بخوانید </a>
                       </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
@@ -260,6 +247,11 @@
                            <h2><strong class="small theme_color">را ببینم؟ The One آیا میتوانیم نمونه از </strong><p>قطعا، شما می توانید نمونه هایی که بصورت عمومی منتشر شده اند را ببینید.
                            </p>
                         </div>
+                        <div style="text-align: center;" data-aos="fade-left"  data-aos-duration="1500" data-aos-offset="200">
+                           <p style="font-size: x-large;">شما اکنون میتوانید در سه روز از خدمات ما به صورت رایگان استفاده کنید</p>
+                           <button  class="btn btn-primary anibtn"  onclick="foo()">!سه روز استفاده رایگان</button>
+                           <p style="color: rgb(26, 25, 49); margin-top: 1rem; font-size: 2rem;">!فقط تا پایان شهریور فرصت باقیست</p>
+                        </div>   
                      </div>
                   </div>
                </div>
@@ -303,10 +295,11 @@
             </div>
          </div> -->
          <!-- end section -->
+         
          <!-- section -->
          <div class="section about_section layout_padding">
-            <div class="container">
-               <div class="row">
+            <div class="container"data-aos="zoom-in" data-aos-duration="1500" data-aos-offset="200">
+               <div class="row" >
                   <div class="col-md-12">
                      <div class="full">
                         <div class="heading_main text_align_center margin-bottom_30">
@@ -344,21 +337,13 @@
                    </div>
                 </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-4">
-                   <div class="work_blog margin-top_30">
-                      <img class="img-responsive" src="images/blog4.jpg" alt="#" />
-                      <div class="hover_workblog">
-                          <img src="images/search_icon.png" alt="#" />
-                      </div>
-                   </div>
-                </div>
 
               </div>
             </div>
          </div>
          <!-- end section -->
          <!-- section -->
-         <div class="section about_section layout_padding padding_top_0">
+      <!--   <div class="section about_section layout_padding padding_top_0">
             <div class="row">
                   <div class="col-md-12">
                      <div class="full">
@@ -368,9 +353,9 @@
                      </div>
                   </div>
                </div>
-         </div>
+         </div> -->
          <!-- section -->
-         <div class="section contact_section">
+     <!--     <div class="section contact_section">
             <div class="container-fluid">
                <div class="row" style="direction: rtl;">
                   <div class="col-md-6 theme_color_bg fc3726 padding_0">
@@ -417,7 +402,7 @@
                   </div> -->
                </div>
             </div>
-         </div>
+         </div> 
          <!-- end section -->
          <!-- Start Footer -->
          <footer class="footer-box">
@@ -431,7 +416,7 @@
                      </div>
                   </div>
                </div>
-               <div class="row">
+               <div class="row" style="justify-content: center;">
                   
                   <!-- <div class="col-lg-4 col-md-6 col-sm-6 white_fonts">
                      <div class="full footer_blog f_icon_1">
@@ -474,7 +459,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-12">
-                     <p class="crp" style="text-align: right;direction: rtl;">© تمامی متن ها و تصاویر متعلق به The One 2018 است </p>
+                     <p class="crp" style="text-align: right;direction: rtl;">© تمامی متن ها و تصاویر متعلق به The One 2020 است </p>
                   </div>
                </div>
             </div>
@@ -496,6 +481,8 @@
       <script src="js/isotope.min.js"></script>
       <script src="js/images-loded.min.js"></script>
       <script src="js/custom.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <!-- End Google Map -->
       <script>
          $(document).ready(function() {
@@ -505,9 +492,57 @@
              $('a[aria-expanded=true]').attr('aria-expanded', 'false');
            });
          });
+         
+         function foo(){
+            Swal.fire({title: 'فرم عضویت' , text: 'نام' ,  html:
+         '<input style="height: 2rem; width: 20rem;" dir="rtl" placeholder="نام" id="swal-input1" class="swal2-input">' +
+         '<input style="height: 2rem; width: 20rem;" dir="rtl" placeholder="نام خانوادگی" id="swal-input2" class="swal2-input">'+
+         '<input style="height: 2rem; width: 20rem;" dir="rtl"  type="email" placeholder="ایمیل" id="swal-input3" class="swal2-input">'+
+         '<input style="height: 2rem; width: 20rem;" dir="rtl"  type="text" placeholder="شماره همراه" id="swal-input4" class="swal2-input">'+
+         
+         '<input style="height: 2rem; width: 20rem;" dir="rtl" type="password" placeholder="رمز ورود" id="swal-input5" class="swal2-input">'+
+         '<input style="height: 2rem; width: 20rem;" dir="rtl" type="password" placeholder="تکرا رمز ورود" id="swal-input6" class="swal2-input">' ,
+         confirmButtonColor: '#3085d6' ,confirmButtonText: 'ثبت نام',
+         showCancelButton: true, cancelButtonColor: '#e21212', cancelButtonText: '!بستن'
+         })
+         }
+
+         function onsign(){
+            Swal.fire({ title: 'ثبت نام' ,
+                        position: 'center',
+                        width: 420,
+                        showCloseButton: true,
+                        html:
+                        
+         '<input style="height: 2rem; width: 20rem;" dir="rtl" placeholder="نام" id="swal-input1" class="swal2-input">' +
+         '<input style="height: 2rem; width: 20rem;" dir="rtl" placeholder="نام خانوادگی" id="swal-input2" class="swal2-input">'+
+         '<input style="height: 2rem; width: 20rem;" dir="rtl"  type="email" placeholder="ایمیل" id="swal-input3" class="swal2-input">'+
+         '<input style="height: 2rem; width: 20rem;" dir="rtl" type="password" placeholder="رمز ورود" id="swal-input5" class="swal2-input">'+
+         '<input style="height: 2rem; width: 20rem;" dir="rtl" type="password" placeholder="تکرا رمز ورود" id="swal-input6" class="swal2-input">' ,
+         confirmButtonColor: '#3085d6' ,confirmButtonText: 'ثبت نام',  
+
+         })
+         }
+
+         function onlogin(){
+            Swal.fire({ title: 'ورود کاربر' ,
+                        position: 'center' ,
+                        width: 420 ,
+                        showCloseButton: true,
+                        html: 
+                        '<input  dir="rtl"  type="text" placeholder="ایمیل و یا نام کاربری" id="sign-1" class="swal2-input">'+
+                        '<input  dir="rtl"  type="text" placeholder="رمز عبور" id="sign-2" class="swal2-input">' ,
+                        confirmButtonColor: '#3085d6' ,confirmButtonText: 'ورود',  
+               })
+         }
+
+         AOS.init();
+
+         </script> 
+  
+      
       </script>
       <!-- google map js -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
       <!-- end google map js -->
-   </body>
-</html>
+   </body></html>
